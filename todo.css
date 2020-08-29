@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgba(214, 185, 247, 0.513);
+}
+
+header {
+    position: relative;
+    flex-wrap: wrap;
+    height: 150px;
+    background-image: linear-gradient(rgba(101, 182, 219, 0.513), rgba(93, 20, 90, 0.609));
+    border-bottom: 3px dashed rgba(76, 0, 130, 0.452);
+}
+
+header h1 {
+    padding-top: 3%;
+    text-align: center;
+    font-size: 400%;
+    font-weight: 900;
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+header h4 {
+    text-align: center;
+    font-weight: 900;
+    color: #444644;
+    margin-top: 0;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+}
+
+img{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+div.image {
+    position: absolute;
+    left: 70%;
+    width: 17%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+main {
+    margin-top: 2%;
+    padding: 0;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+section {
+    border: 5px double rgba(76, 0, 130, 0.452);
+    background-image: linear-gradient(rgba(93, 20, 90, 0.609),rgba(101, 182, 219, 0.513));
+    border-radius: 5%;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-bottom: 3%;
+    box-shadow: 5px 5px 3px grey;
+    word-break: break-all;
+}
+section h4 {
+    text-align: center;
+    font-size: 100%;
+    padding: 10px auto;
+    color:#2f0202f6;
+}
+label {
+    display: block;
+}
+
+label input{
+    vertical-align: top;
+}
+
+input[type="text"]{
+    width: 70%;
+    height: auto;
+    border-radius: 7px;
+    transition: all 0.75s ease;
+}
+
+input[type="button"]{
+    vertical-align: top;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px inset rgba(61, 3, 116, 0.726);
+    background-color: rgba(218, 218, 218, 0.513);
+    color:rebeccapurple;
+    border-radius: 10%;
+    margin-left: 5%;
+    box-shadow: 2px 2px 2px #444644;
+    transition: all 0.7s ease;
+    font-size: x-small;
+    font-weight: 700;
+}
+
+input[type="button"]:hover{
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color:  rgba(240, 207, 207, 0.691);
+    background-color: #444644;
+}
+
+#add {
+    margin-bottom: 5%;
+}
+
+#move {
+    margin: auto 0px auto 70%;
+}
+#complete {
+    margin: 5px 0px 7px 65%;
+}
+#remove {
+    margin: 5px 0px 7px 82%;
+}
+
+section p {
+    font-size: smaller;
+    text-align: center;
+    font-weight: 700;
+    word-break: keep-all;
+    color: #05022788;
+}
+
+@media screen and (max-width: 1320px){
+#inputField {
+    width: 100%;
+    }
+}
+@media screen and (max-width: 1230px){
+    #move {
+        margin: 5px 0px 7px 62%;
+    }
+    #complete {
+        margin: 5px 0px 7px 60%;
+    }
+}
+@media screen and (max-width: 1090px){
+    div.image {
+        width: 20%;
+    }
+    #complete {
+        margin: 5px 0px 7px 55%;
+    }
+}
+@media screen and (max-width: 1000px){
+    #move {
+        margin: 5px 0px 7px 55%;
+    }
+    header h1 {
+        font-size: 300%;
+    }
+}
+@media screen and (max-width: 960px){
+    #complete {
+        margin: 5px 0px 7px 47%;
+    }
+    #remove {
+        margin: 5px 0px 7px 70%;
+    }
+}
+@media screen and (max-width: 870px){
+    #complete {
+        margin: 5px 0px 7px 40%;
+    }
+    #move {
+        margin: 5px 0px 7px 50%;
+    }
+    div.image {
+        left: 72%;
+        width: 25%;
+    }
+}
+@media screen and (max-width: 767px){
+    body {
+        padding: 0;
+    }
+    header {
+        height: 100px;
+    }
+    
+header h1 {
+    padding-top: 1%;
+    }
+    article {
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+    #viewTodo {
+        margin-left: 25%;
+    }
+    #viewTodo, #onGoing, #viewCompleted {
+       margin-bottom: 2%;
+    }
+    .hidden-desktop {
+        display: inline-block !important;
+    }
+   #section1{
+        display: block;
+    }
+    #section2, #section3 {
+        display: none;
+        margin-bottom: 2%;
+    }
+    #move {
+        margin: 5px 0px 7px 75%;
+    }
+    #complete {
+        margin: 5px 0px 7px 73%;
+    }
+    #remove {
+        margin: 5px 0px 7px 83%;
+    }
+}
+@media screen and (max-width: 670px){
+    #viewTodo {
+        margin-left: 20%;
+    }
+}
+@media screen and (max-width: 530px){
+    #move {
+        margin: 5px 0px 7px 65%;
+    }
+    #complete {
+        margin: 5px 0px 7px 63%;
+    }
+    #remove {
+        margin: 5px 0px 7px 78%;
+    }
+    #viewTodo {
+        margin-left: 13%;
+    }
+}
+@media screen and (max-width: 455px){
+    #viewTodo {
+        margin-left: 5%;
+    }
+}
+@media screen and (max-width: 410px){
+    #viewTodo {
+        margin-left: 1%;
+    }
+}
+@media screen and (max-width: 390px){
+    .hidden-desktop {
+        display: block !important;
+    }
+    #viewTodo, #viewOngoing, #viewCompleted {
+        margin: 3% auto;
+    }
+    #move {
+        margin: 5px 0px 7px 60%;
+    }
+    #complete {
+        margin: 5px 0px 7px 58%;
+    }
+}
+@media screen and (max-width: 340px){
+    #add, #move, #complete,  #remove{
+        margin: 5% auto;
+    }
+}
+@media screen and (max-width: 330px){
+    header h1 {
+        font-size: 200%;
+        padding-top: 4%;
+    }
+    header h4 {
+        font-size: smaller;
+    }
+}
+@media screen and (max-width: 185px){
+    header h1 {
+        font-size: 150%;
+        padding-top: 5%;
+    }
+    header h4 {
+        font-size: x-small;
+    }
+}

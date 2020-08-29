@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css\bootstrap.css">
+        <link rel="stylesheet" href="css\bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body>
+        <header class="container-fluid">
+
+            <div class="image hidden-phone"><img src="img\a.jpeg" alt="some todo images"></div>
+            <h1>
+   <span style="color:#790808e1">T</span><span style="color:#0e480ed2">O</span>
+   <span style="color:#0b0353ea">D</span><span  style="color:#430247">O</span>
+   <span style="color:#444644">L</span><span style="color:#bff00e9f">I</span><span style="color:#045457d2">S</span><span style="color:#fa4545a8">T</span>
+            </h1>
+            <h4>KEEP TRACK OF YOUR ACTIVITIES</h4>
+        
+        </header>
+        <main class="container-fluid">
+            <input id="viewTodo" class='hidden-desktop hidden-print hidden-tablet' type="button" value="DISPLAY TO-DO">
+            <input id="viewOngoing" class='hidden-desktop hidden-print hidden-tablet'type="button" value="DISPLAY ON-GOING">
+            <input id="viewCompleted" class='hidden-desktop hidden-print hidden-tablet'type="button" value="DISPLAY COMPLETED">
+            <article class="row-fluid">
+                <section id="section1" class="span4">
+                    <h4>TASKS TO PERFORM</h4>
+
+                    <p>THE CHECKED TASKS WILL BE MOVED TO THE ON-GOING TASKS</p>
+                  
+                        <input type="text" id="inputField" placeholder="Write your to-do here and save it with the ADD NEW TASK button" maxlength="150" spellcheck="true">
+                        <input id="add" type="button" value="ADD NEW TASK"><br>
+                        <div id="container">    
+                        </div>
+                        <input id="move" type="button" value="MOVE TO ONGOING">
+                </section>
+
+                <section id="section2" class="span4">
+                    <h4>ON-GOING TASK(S)</h4>
+
+                    <p class="">THE CHECKED TASKS WILL BE MOVED TO THE COMPLETED TASKS</p>
+
+                    <div id="container2">    
+                    </div>
+                                <input id="complete" type="button" value="MOVE TO COMPLETED">
+
+                </section>
+
+                <section id="section3" class="span4">
+                    <h4>COMPLETED TASK(S)</h4>
+                    <p class="">THE CHECKED TASKS WILL BE DELETED</p>
+
+                    <div id="container3">    
+                    </div>
+                                <input id="remove" type="button" value="DELETE">
+
+                </section>
+            </artiicle>
+        </main>
+
+
+      <!-- <input type="text"><button>submit</button>
+        <div></div>--> 
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script src="todo.js" async defer></script>
+    </body>
+</html>
