@@ -220,7 +220,7 @@ const toComplete = () => {
     const checkboxes = document.querySelectorAll(`input[name="completed"]:checked`);
       checkboxes.forEach((checkbox) => {
 
-      let toConfirm = confirm(`congratulations on the completion of the task(s). Do you want delete "${checkbox.nextSibling.innerHTML}" from your todo list?`);
+      let toConfirm = confirm(`Congratulations on the completion of this task. Do you want to delete "${checkbox.nextSibling.innerHTML}" from your todo list?`);
 
       if(toConfirm === false){
         return;
