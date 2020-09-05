@@ -116,8 +116,30 @@ span.classList.add('todo');
   } else if(textarea.value.charAt(0) === " "){
     alert("INPUT FIELD CAN NOT START WITH A SPACE");
   } else if (textarea.value !==""){
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let time;
+
+ if(minutes < 10){
+minutes = "0" + minutes;
+ };
+
+ if(hour === 0){
+     hour = hour + 12;
+     time = "time:" + " " + hour + ":" + minutes + "AM";
+ } else if(hour > 0 && hour < 13){
+     time = "time:"+ hour + ":" + minutes + "PM";
+ } else {
+    hour = hour - 12;
+     time = "time:" + hour + ":" + minutes + "PM";
+ };
+    let createDate = ` (added on:${day}/${month}/${year} ${time})`
     let firstLetter = textarea.value.charAt(0).toUpperCase();
-    textarea.value = firstLetter + textarea.value.substr(1);
+    textarea.value = firstLetter + textarea.value.substr(1) + createDate;
 
 
   let newTask = document.createTextNode(textarea.value);
@@ -192,6 +214,32 @@ const toComplete = () => {
       inputTag.type = "checkbox";
       inputTag.name = "completed";
       inputTag.style.marginRight = "10px"
+
+      let date = new Date();
+      let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
+      let hour = date.getHours();
+      let minutes = date.getMinutes();
+      let time;
+  
+   if(minutes < 10){
+  minutes = "0" + minutes;
+   };
+  
+   if(hour === 0){
+       hour = hour + 12;
+       time = "time:" + " " + hour + ":" + minutes + "AM";
+   } else if(hour > 0 && hour < 13){
+       time = "time:"+ hour + ":" + minutes + "PM";
+   } else {
+      hour = hour - 12;
+       time = "time:" + hour + ":" + minutes + "PM";
+   };
+
+      let createDate = ` - (completed on:${day}/${month}/${year} ${time})`
+
+      checkbox.nextSibling.innerHTML += createDate;
       let newTask = document.createTextNode(checkbox.nextSibling.innerHTML);
   
       label.append(inputTag);
