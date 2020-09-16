@@ -36,7 +36,6 @@ setInterval(() => {
   header.style.borderBottomColor = colors[i];
 }, 500);
 
-
 setInterval(() => {
   let images = document.querySelector("img");
   let img = ["img/a.jpeg","img/b.jpeg","img/c.jpeg","img/d.jpeg","img/e.jpeg","img/f.jpeg","img/g.jpeg","img/h.jpeg","img/i.jpeg","img/j.jpeg","img/k.jpeg"];
@@ -97,7 +96,6 @@ function inProgress(){
 window.addEventListener("load",loadTodoList);
 window.addEventListener("load",inProgress);
 
-
 const text = () => {
 
   let label = document.createElement('label');
@@ -131,9 +129,11 @@ minutes = "0" + minutes;
  if(hour === 0){
      hour = hour + 12;
      time = "time:" + " " + hour + ":" + minutes + "AM";
- } else if(hour > 0 && hour < 13){
-     time = "time:"+ hour + ":" + minutes + "PM";
- } else {
+ } else if(hour > 0 && hour < 12){
+     time = "time:"+ hour + ":" + minutes + "AM";
+ }  else if(hour === 12){
+  time = "time:"+ hour + ":" + minutes + "PM";
+} else {
     hour = hour - 12;
      time = "time:" + hour + ":" + minutes + "PM";
  };
@@ -163,8 +163,6 @@ const checkboxes = document.querySelectorAll(`input[name="lists"]:checked`);
  
   checkboxes.forEach((checkbox) => {
 
-    
-   
   let label = document.createElement('label');
   label.style.display = "block";
   let span = document.createElement('span');
@@ -184,7 +182,6 @@ const checkboxes = document.querySelectorAll(`input[name="lists"]:checked`);
   container2.appendChild(label);
   checkbox.parentNode.parentNode.removeChild(checkbox.parentNode);
  
-  
   localStorage.removeItem('todo');
   localStorage.setItem("todo", container.innerHTML);
   localStorage.setItem("ongoing", container2.innerHTML);
@@ -196,7 +193,6 @@ const ongoing1 = document.querySelector('#move');
 ongoing1.addEventListener('click', (event) => {
  ongoing();
 });
-
 
 const toComplete = () => {
   
@@ -228,14 +224,16 @@ const toComplete = () => {
    };
   
    if(hour === 0){
-       hour = hour + 12;
-       time = "time:" + " " + hour + ":" + minutes + "AM";
-   } else if(hour > 0 && hour < 13){
-       time = "time:"+ hour + ":" + minutes + "PM";
-   } else {
-      hour = hour - 12;
-       time = "time:" + hour + ":" + minutes + "PM";
-   };
+    hour = hour + 12;
+    time = "time:" + " " + hour + ":" + minutes + "AM";
+} else if(hour > 0 && hour < 12){
+    time = "time:"+ hour + ":" + minutes + "AM";
+}  else if(hour === 12){
+ time = "time:"+ hour + ":" + minutes + "PM";
+} else {
+   hour = hour - 12;
+    time = "time:" + hour + ":" + minutes + "PM";
+};
 
       let createDate = ` - (completed on:${day}/${month}/${year} ${time})`
 
@@ -285,38 +283,3 @@ const toComplete = () => {
    
      remove();
     });
-
-
-
-
-
-
-
-
-/*let a = document.getElementById('add');
-let b = document.getElementsByTagName('textarea')[0];
-
-const cl = () => {
-console.log(b.value);
-}
-a.addEventListener("click", cl);
-
-
-
-let a = document.getElementsByTagName("button")[0];
-let b = document.getElementsByTagName("input")[0];
-
-
-function func(){
-    localStorage.setItem("name", b.value);
-};
-
-function fun(){
-  let a = localStorage.getItem("name");
-  console.log(a);
-b.value = a;
-};
-
-
- window.addEventListener("load", fun);
-a.addEventListener("click", func);*/
