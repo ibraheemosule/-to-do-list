@@ -21,7 +21,12 @@ setInterval(() => {
   let seven = document.getElementsByTagName("span")[6];
   let eight = document.getElementsByTagName("span")[7];
 
-  let colors = ["#790808e1","#0e480ed2","#0b0353ea","#430247","#444644","#045457d2","#fa4545a8","#354703df","#fad7d796","#ff07ea78","#9bfcff7a"];
+  let colors = [
+    "#790808e1","#0e480ed2","#0b0353ea","#430247",
+    "#444644","#045457d2","#fa4545a8","#354703df",
+  "#fad7d796","#ff07ea78","#9bfcff7a"
+  ];
+
   let i = Math.floor(Math.random()* 11);
   one.style.color = colors[Math.floor(Math.random()* 11)];
   two.style.color = colors[Math.floor(Math.random()* 11)];
@@ -38,13 +43,18 @@ setInterval(() => {
 
 setInterval(() => {
   let images = document.querySelector("img");
-  let img = ["img/a.jpeg","img/b.jpeg","img/c.jpeg","img/d.jpeg","img/e.jpeg","img/f.jpeg","img/g.jpeg","img/h.jpeg","img/i.jpeg","img/j.jpeg","img/k.jpeg"];
+  let img = [
+    "img/a.jpeg","img/b.jpeg","img/c.jpeg",
+    "img/d.jpeg","img/e.jpeg","img/f.jpeg",
+    "img/g.jpeg","img/h.jpeg","img/i.jpeg",
+    "img/j.jpeg","img/k.jpeg"
+  ];
+
   let i = Math.floor(Math.random()* 11);
   images.src = img[i]
 }, 3000);
 
 const showTodo = () => {
-
   let section1 = document.getElementById("section1");
   let section2 = document.getElementById("section2");
   let section3 = document.getElementById("section3");
@@ -52,6 +62,7 @@ const showTodo = () => {
   section2.style.display = "none";
   section3.style.display = "none";
 }
+
 viewTodo.addEventListener("click", showTodo);
 
 const showOngoing = () => {
@@ -63,6 +74,7 @@ const showOngoing = () => {
   section2.style.display = "block";
   section3.style.display = "none";
 }
+
 viewOngoing.addEventListener("click", showOngoing);
 
 const showCompleted = () => {
@@ -77,28 +89,25 @@ const showCompleted = () => {
 viewCompleted.addEventListener("click", showCompleted);
 
 function loadTodoList(){
- // localStorage.clear()
  let a = localStorage.getItem("todo");
  container.innerHTML = a;
 };
+
 function inProgress(){
- //  localStorage.clear()
   let a = localStorage.getItem("ongoing");
   container2.innerHTML = a;
  };
  function done(){
-  // localStorage.clear()
   let a = localStorage.getItem("complete");
   container3.innerHTML = a;
  };
 
- window.addEventListener("load",done);
+window.addEventListener("load",done);
 window.addEventListener("load",loadTodoList);
 window.addEventListener("load",inProgress);
 
 const text = () => {
-
-  let label = document.createElement('label');
+let label = document.createElement('label');
 label.style.display = "block";
 let span = document.createElement('span');
 span.classList.add('todo');
@@ -146,8 +155,8 @@ minutes = "0" + minutes;
   textarea.value = '';
 
   label.append(inputTag);
- span.append(newTask);
- label.append(span);
+  span.append(newTask);
+  label.append(span);
 
 
 container.appendChild(label);
@@ -262,13 +271,13 @@ const toComplete = () => {
   
 
   const remove = () => {
-  
     const checkboxes = document.querySelectorAll(`input[name="completed"]:checked`);
       checkboxes.forEach((checkbox) => {
 
-      let toConfirm = confirm(`Congratulations on the completion of this task. Do you want to delete "${checkbox.nextSibling.innerHTML}" from your todo list?`);
+      let toConfirm = confirm(`Congratulations on the completion of this task. Do you want to delete
+       "${checkbox.nextSibling.innerHTML}" from your todo list?`);
 
-      if(toConfirm === false){
+      if(!toConfirm){
         return;
       }
       checkbox.parentNode.parentNode.removeChild(checkbox.parentNode);

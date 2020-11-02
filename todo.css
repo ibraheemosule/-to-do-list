@@ -61,11 +61,11 @@ main {
 section {
     border: 5px double rgba(76, 0, 130, 0.452);
     background-image: linear-gradient(rgba(93, 20, 90, 0.609),rgba(101, 182, 219, 0.513));
-    border-radius: 5%;
+    border-radius: 15px;
     padding-right: 1%;
     padding-left: 1%;
     padding-bottom: 3%;
-    box-shadow: 5px 5px 3px grey;
+    box-shadow: 2px 2px 2px grey;
     word-break: normal;
 }
 section h4 {
@@ -106,9 +106,6 @@ input[type="button"]{
 }
 
 input[type="button"]:hover{
-    padding: 4px;
-    padding-left: 6px;
-    padding-right: 6px;
     color:  rgba(240, 207, 207, 0.691);
     background-color: #444644;
 }
