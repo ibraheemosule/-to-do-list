@@ -12,14 +12,16 @@ let viewOngoing = document.getElementById("viewOngoing");
 let viewCompleted = document.getElementById("viewCompleted");
 
 setInterval(() => {
-  let one = document.getElementsByTagName("span")[0];
-  let two = document.getElementsByTagName("span")[1];
-  let three = document.getElementsByTagName("span")[2];
-  let four = document.getElementsByTagName("span")[3];
-  let five = document.getElementsByTagName("span")[4];
-  let six = document.getElementsByTagName("span")[5];
-  let seven = document.getElementsByTagName("span")[6];
-  let eight = document.getElementsByTagName("span")[7];
+  let elements = [
+    document.getElementsByTagName("span")[0],
+    document.getElementsByTagName("span")[1],
+    document.getElementsByTagName("span")[2],
+    document.getElementsByTagName("span")[3],
+    document.getElementsByTagName("span")[4],
+    document.getElementsByTagName("span")[5],
+    document.getElementsByTagName("span")[6],
+    document.getElementsByTagName("span")[7]
+    ];
 
   let colors = [
     "#790808e1","#0e480ed2","#0b0353ea","#430247",
@@ -28,16 +30,12 @@ setInterval(() => {
   ];
 
   let i = Math.floor(Math.random()* 11);
-  one.style.color = colors[Math.floor(Math.random()* 11)];
-  two.style.color = colors[Math.floor(Math.random()* 11)];
-  three.style.color = colors[Math.floor(Math.random()* 11)];
-  four.style.color = colors[Math.floor(Math.random()* 11)];
-  five.style.color = colors[Math.floor(Math.random()* 11)];
-  six.style.color = colors[Math.floor(Math.random()* 11)];
-  seven.style.color = colors[Math.floor(Math.random()* 11)];
-  eight.style.color = colors[Math.floor(Math.random()* 11)];
+  
+  elements.forEach((element) => {
+    element.style.color = colors[Math.floor(Math.random()* 11)] 
+  });
 
-  let header = document.getElementsByTagName('header')[0];
+  const header = document.getElementsByTagName('header')[0];
   header.style.borderBottomColor = colors[i];
 }, 500);
 
